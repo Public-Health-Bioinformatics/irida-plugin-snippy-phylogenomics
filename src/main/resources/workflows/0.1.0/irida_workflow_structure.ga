@@ -1,0 +1,474 @@
+{
+  "uuid" : "cda33f79-3042-4441-9f83-50c2780237dc",
+  "tags" : [ ],
+  "format-version" : "0.1",
+  "name" : "snippy-phylogenomics",
+  "version" : 21,
+  "steps" : {
+    "0" : {
+      "workflow_outputs" : [ {
+        "output_name" : "output",
+        "uuid" : "fcc2da35-88a7-42ed-a982-1e647831016c",
+        "label" : null
+      } ],
+      "input_connections" : { },
+      "label" : "sequence_reads_paired",
+      "id" : 0,
+      "tool_state" : "{\"collection_type\": \"list:paired\", \"name\": \"sequence_reads_paired\"}",
+      "errors" : null,
+      "position" : {
+        "top" : 336,
+        "left" : 181
+      },
+      "name" : "Input dataset collection",
+      "uuid" : "06896898-839f-4bae-8388-9022ff53ef1e",
+      "outputs" : [ ],
+      "type" : "data_collection_input",
+      "tool_version" : null,
+      "annotation" : "",
+      "inputs" : [ ],
+      "content_id" : null,
+      "tool_id" : null
+    },
+    "1" : {
+      "workflow_outputs" : [ {
+        "output_name" : "output",
+        "uuid" : "ad987ae3-6921-4a41-97ee-2e64cc063698",
+        "label" : null
+      } ],
+      "input_connections" : { },
+      "label" : "reference",
+      "id" : 1,
+      "tool_state" : "{\"name\": \"reference\"}",
+      "errors" : null,
+      "position" : {
+        "top" : 221,
+        "left" : 314.5
+      },
+      "name" : "Input dataset",
+      "uuid" : "9a9ab89c-c2db-46f3-9e02-2f86d603f7c8",
+      "outputs" : [ ],
+      "type" : "data_input",
+      "tool_version" : null,
+      "annotation" : "",
+      "inputs" : [ ],
+      "content_id" : null,
+      "tool_id" : null
+    },
+    "2" : {
+      "workflow_outputs" : [ ],
+      "input_connections" : {
+        "reference_source|ref_file" : {
+          "output_name" : "output",
+          "id" : 1
+        },
+        "fastq_input|fastq_input" : {
+          "output_name" : "output",
+          "id" : 0
+        }
+      },
+      "label" : null,
+      "id" : 2,
+      "tool_state" : "{\"adv\": \"{\\\"bwaopt\\\": \\\"\\\", \\\"mapqual\\\": \\\"60\\\", \\\"mincov\\\": \\\"10\\\", \\\"minfrac\\\": \\\"0.9\\\", \\\"minqual\\\": \\\"100.0\\\", \\\"rename_cons\\\": \\\"false\\\", \\\"rgid\\\": \\\"\\\"}\", \"__page__\": null, \"outputs\": \"[\\\"outvcf\\\", \\\"outtab\\\", \\\"outzip\\\"]\", \"__rerun_remap_job_id__\": null, \"fastq_input\": \"{\\\"__current_case__\\\": 2, \\\"fastq_input\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"fastq_input_selector\\\": \\\"paired_collection\\\"}\", \"reference_source\": \"{\\\"__current_case__\\\": 1, \\\"ref_file\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"reference_source_selector\\\": \\\"history\\\"}\"}",
+      "errors" : null,
+      "position" : {
+        "top" : 371.5,
+        "left" : 457.5
+      },
+      "name" : "snippy",
+      "uuid" : "06a306e1-aea1-4139-8f87-30fc25662625",
+      "outputs" : [ {
+        "type" : "vcf",
+        "name" : "snpvcf"
+      }, {
+        "type" : "tabular",
+        "name" : "snptab"
+      }, {
+        "type" : "zip",
+        "name" : "outdir"
+      } ],
+      "tool_shed_repository" : {
+        "owner" : "iuc",
+        "changeset_revision" : "3fe8ef358d66",
+        "name" : "snippy",
+        "tool_shed" : "toolshed.g2.bx.psu.edu"
+      },
+      "type" : "tool",
+      "tool_version" : "4.4.5+galaxy2",
+      "annotation" : "",
+      "inputs" : [ {
+        "name" : "fastq_input",
+        "description" : "runtime parameter for tool snippy"
+      }, {
+        "name" : "reference_source",
+        "description" : "runtime parameter for tool snippy"
+      } ],
+      "post_job_actions" : {
+        "HideDatasetActionoutdir" : {
+          "output_name" : "outdir",
+          "action_type" : "HideDatasetAction",
+          "action_arguments" : { }
+        },
+        "DeleteIntermediatesActionsnpvcf" : {
+          "output_name" : "snpvcf",
+          "action_type" : "DeleteIntermediatesAction",
+          "action_arguments" : { }
+        },
+        "HideDatasetActionsnptab" : {
+          "output_name" : "snptab",
+          "action_type" : "HideDatasetAction",
+          "action_arguments" : { }
+        },
+        "HideDatasetActionsnpvcf" : {
+          "output_name" : "snpvcf",
+          "action_type" : "HideDatasetAction",
+          "action_arguments" : { }
+        }
+      },
+      "content_id" : "toolshed.g2.bx.psu.edu/repos/iuc/snippy/snippy/4.4.5+galaxy2",
+      "tool_id" : "toolshed.g2.bx.psu.edu/repos/iuc/snippy/snippy/4.4.5+galaxy2"
+    },
+    "3" : {
+      "workflow_outputs" : [ ],
+      "input_connections" : {
+        "reference_source|ref_file" : {
+          "output_name" : "output",
+          "id" : 1
+        },
+        "indirs" : {
+          "output_name" : "outdir",
+          "id" : 2
+        }
+      },
+      "label" : null,
+      "id" : 3,
+      "tool_state" : "{\"__page__\": null, \"outputs\": \"[\\\"outaln\\\"]\", \"__rerun_remap_job_id__\": null, \"indirs\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"reference_source\": \"{\\\"__current_case__\\\": 1, \\\"ref_file\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"reference_source_selector\\\": \\\"history\\\"}\"}",
+      "errors" : null,
+      "position" : {
+        "top" : 192.5,
+        "left" : 795.5
+      },
+      "name" : "snippy-core",
+      "uuid" : "a9cea341-b168-4470-872b-994a6137dcb2",
+      "outputs" : [ {
+        "type" : "fasta",
+        "name" : "alignment_fasta"
+      } ],
+      "tool_shed_repository" : {
+        "owner" : "iuc",
+        "changeset_revision" : "3fe8ef358d66",
+        "name" : "snippy",
+        "tool_shed" : "toolshed.g2.bx.psu.edu"
+      },
+      "type" : "tool",
+      "tool_version" : "4.4.5+galaxy2",
+      "annotation" : "",
+      "inputs" : [ {
+        "name" : "indirs",
+        "description" : "runtime parameter for tool snippy-core"
+      }, {
+        "name" : "reference_source",
+        "description" : "runtime parameter for tool snippy-core"
+      } ],
+      "post_job_actions" : {
+        "HideDatasetActionalignment_fasta" : {
+          "output_name" : "alignment_fasta",
+          "action_type" : "HideDatasetAction",
+          "action_arguments" : { }
+        },
+        "RenameDatasetActionalignment_fasta" : {
+          "output_name" : "alignment_fasta",
+          "action_type" : "RenameDatasetAction",
+          "action_arguments" : {
+            "newname" : "core_snps_pre_filter.fasta"
+          }
+        }
+      },
+      "content_id" : "toolshed.g2.bx.psu.edu/repos/iuc/snippy/snippy_core/4.4.5+galaxy2",
+      "tool_id" : "toolshed.g2.bx.psu.edu/repos/iuc/snippy/snippy_core/4.4.5+galaxy2"
+    },
+    "4" : {
+      "workflow_outputs" : [ {
+        "output_name" : "clean_full_aln",
+        "uuid" : "85f2141d-bf40-4f92-bb71-30fa55502bdf",
+        "label" : null
+      } ],
+      "input_connections" : {
+        "full_aln" : {
+          "output_name" : "alignment_fasta",
+          "id" : 3
+        }
+      },
+      "label" : null,
+      "id" : 4,
+      "tool_state" : "{\"__page__\": null, \"__rerun_remap_job_id__\": null, \"custom_char\": \"{\\\"__current_case__\\\": 0, \\\"custom_char_selector\\\": \\\"false\\\"}\", \"full_aln\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}",
+      "errors" : null,
+      "position" : {
+        "top" : 373.5,
+        "left" : 797
+      },
+      "name" : "snippy-clean_full_aln",
+      "uuid" : "3b5f8cca-ff1b-42da-85f5-b15d86a61c85",
+      "outputs" : [ {
+        "type" : "fasta",
+        "name" : "clean_full_aln"
+      } ],
+      "tool_shed_repository" : {
+        "owner" : "iuc",
+        "changeset_revision" : "3fe8ef358d66",
+        "name" : "snippy",
+        "tool_shed" : "toolshed.g2.bx.psu.edu"
+      },
+      "type" : "tool",
+      "tool_version" : "4.4.5+galaxy0",
+      "annotation" : "",
+      "inputs" : [ {
+        "name" : "full_aln",
+        "description" : "runtime parameter for tool snippy-clean_full_aln"
+      } ],
+      "post_job_actions" : {
+        "RenameDatasetActionclean_full_aln" : {
+          "output_name" : "clean_full_aln",
+          "action_type" : "RenameDatasetAction",
+          "action_arguments" : {
+            "newname" : "core_snps_pre_recomb_filter.fasta"
+          }
+        }
+      },
+      "content_id" : "toolshed.g2.bx.psu.edu/repos/iuc/snippy/snippy_clean_full_aln/4.4.5+galaxy0",
+      "tool_id" : "toolshed.g2.bx.psu.edu/repos/iuc/snippy/snippy_clean_full_aln/4.4.5+galaxy0"
+    },
+    "5" : {
+      "workflow_outputs" : [ {
+        "output_name" : "recomb_pred_gff",
+        "uuid" : "3898caa7-a07f-4791-9d21-eddca257aafc",
+        "label" : null
+      } ],
+      "input_connections" : {
+        "alignment_file" : {
+          "output_name" : "clean_full_aln",
+          "id" : 4
+        }
+      },
+      "label" : null,
+      "id" : 5,
+      "tool_state" : "{\"adv\": \"{\\\"conv_meth\\\": \\\"weighted_robinson_foulds\\\", \\\"iters\\\": \\\"5\\\", \\\"outgroup\\\": \\\"\\\"}\", \"__page__\": null, \"really_adv\": \"{\\\"filter_percentage\\\": \\\"25\\\", \\\"max_window_size\\\": \\\"10000\\\", \\\"min_snps\\\": \\\"3\\\", \\\"min_window_size\\\": \\\"100\\\", \\\"remove_duplicates\\\": \\\"false\\\", \\\"tree_builder\\\": \\\"raxml\\\"}\", \"__rerun_remap_job_id__\": null, \"alignment_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"outfiles\": \"[\\\"gff\\\", \\\"vcf\\\", \\\"fpoly\\\"]\"}",
+      "errors" : null,
+      "position" : {
+        "top" : 536.5,
+        "left" : 800.5
+      },
+      "name" : "Gubbins",
+      "uuid" : "05bfe313-ee98-4a97-ad93-aeac9639bad9",
+      "outputs" : [ {
+        "type" : "gff3",
+        "name" : "recomb_pred_gff"
+      }, {
+        "type" : "fasta",
+        "name" : "filt_polymorph_fna"
+      }, {
+        "type" : "vcf",
+        "name" : "sum_snp_vcf"
+      } ],
+      "tool_shed_repository" : {
+        "owner" : "iuc",
+        "changeset_revision" : "637ec5d5368c",
+        "name" : "gubbins",
+        "tool_shed" : "toolshed.g2.bx.psu.edu"
+      },
+      "type" : "tool",
+      "tool_version" : "0.1.0",
+      "annotation" : "",
+      "inputs" : [ {
+        "name" : "alignment_file",
+        "description" : "runtime parameter for tool Gubbins"
+      } ],
+      "post_job_actions" : {
+        "RenameDatasetActionrecomb_pred_gff" : {
+          "output_name" : "recomb_pred_gff",
+          "action_type" : "RenameDatasetAction",
+          "action_arguments" : {
+            "newname" : "predicted_recombinant_sites.gff"
+          }
+        },
+        "HideDatasetActionsum_snp_vcf" : {
+          "output_name" : "sum_snp_vcf",
+          "action_type" : "HideDatasetAction",
+          "action_arguments" : { }
+        },
+        "HideDatasetActionfilt_polymorph_fna" : {
+          "output_name" : "filt_polymorph_fna",
+          "action_type" : "HideDatasetAction",
+          "action_arguments" : { }
+        }
+      },
+      "content_id" : "toolshed.g2.bx.psu.edu/repos/iuc/gubbins/gubbins/0.1.0",
+      "tool_id" : "toolshed.g2.bx.psu.edu/repos/iuc/gubbins/gubbins/0.1.0"
+    },
+    "6" : {
+      "workflow_outputs" : [ {
+        "output_name" : "output_fasta",
+        "uuid" : "3e062429-6aa3-4259-8cd8-3dbdb7a38e43",
+        "label" : null
+      } ],
+      "input_connections" : {
+        "input_fasta" : {
+          "output_name" : "filt_polymorph_fna",
+          "id" : 5
+        }
+      },
+      "label" : null,
+      "id" : 6,
+      "tool_state" : "{\"input_fasta\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__rerun_remap_job_id__\": null, \"out_type\": \"{\\\"__current_case__\\\": 0, \\\"b\\\": \\\"false\\\", \\\"c\\\": \\\"false\\\", \\\"formats\\\": [\\\"-m\\\"], \\\"ot_select\\\": \\\"alignment\\\"}\", \"__page__\": null}",
+      "errors" : null,
+      "position" : {
+        "top" : 772,
+        "left" : 800.5
+      },
+      "name" : "Finds SNP sites",
+      "uuid" : "e5872aa0-4c49-4305-91ea-947351bd4375",
+      "outputs" : [ {
+        "type" : "fasta",
+        "name" : "output_fasta"
+      } ],
+      "tool_shed_repository" : {
+        "owner" : "iuc",
+        "changeset_revision" : "5804f786060d",
+        "name" : "snp_sites",
+        "tool_shed" : "toolshed.g2.bx.psu.edu"
+      },
+      "type" : "tool",
+      "tool_version" : "2.5.1+galaxy0",
+      "annotation" : "",
+      "inputs" : [ {
+        "name" : "input_fasta",
+        "description" : "runtime parameter for tool Finds SNP sites"
+      } ],
+      "post_job_actions" : {
+        "RenameDatasetActionoutput_fasta" : {
+          "output_name" : "output_fasta",
+          "action_type" : "RenameDatasetAction",
+          "action_arguments" : {
+            "newname" : "core_snps_post_recomb_filter.fasta"
+          }
+        }
+      },
+      "content_id" : "toolshed.g2.bx.psu.edu/repos/iuc/snp_sites/snp_sites/2.5.1+galaxy0",
+      "tool_id" : "toolshed.g2.bx.psu.edu/repos/iuc/snp_sites/snp_sites/2.5.1+galaxy0"
+    },
+    "7" : {
+      "workflow_outputs" : [ {
+        "output_name" : "iqtree",
+        "uuid" : "ee1b66aa-c4a8-4a14-a9cf-752fe5e8ad88",
+        "label" : null
+      }, {
+        "output_name" : "mldist",
+        "uuid" : "9620a86f-e574-48ed-8ee8-14cd673d2f9a",
+        "label" : null
+      }, {
+        "output_name" : "treefile",
+        "uuid" : "df766ed3-11a0-4e7f-826a-c00de7f6708c",
+        "label" : null
+      } ],
+      "input_connections" : {
+        "general_options|s" : {
+          "output_name" : "output_fasta",
+          "id" : 6
+        }
+      },
+      "label" : null,
+      "id" : 7,
+      "tool_state" : "{\"__page__\": null, \"general_options\": \"{\\\"keep_ident\\\": \\\"false\\\", \\\"s\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"safe\\\": \\\"false\\\", \\\"seed\\\": \\\"\\\", \\\"st\\\": \\\"DNA\\\", \\\"t\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"te\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}}\", \"__rerun_remap_job_id__\": null, \"modelling_parameters\": \"{\\\"automatic_model\\\": {\\\"cmax\\\": \\\"10\\\", \\\"cmin\\\": \\\"2\\\", \\\"cond_model\\\": {\\\"__current_case__\\\": 0, \\\"m\\\": \\\"GTR+G+ASC\\\", \\\"opt_custommodel\\\": \\\"true\\\"}, \\\"madd\\\": \\\"\\\", \\\"mdef\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"merit\\\": \\\"AIC\\\", \\\"mfreq\\\": \\\"\\\", \\\"mrate\\\": \\\"\\\", \\\"mset\\\": \\\"\\\", \\\"msub\\\": \\\"nuclear\\\", \\\"mtree\\\": \\\"false\\\", \\\"rcluster\\\": \\\"\\\"}, \\\"partition_model\\\": {\\\"q\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"sp\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"spp\\\": \\\"false\\\"}, \\\"rate_heterogeneity\\\": {\\\"a\\\": \\\"\\\", \\\"gmedian\\\": \\\"false\\\", \\\"i\\\": \\\"\\\", \\\"opt_gamma_inv\\\": \\\"false\\\", \\\"wsr\\\": \\\"false\\\"}, \\\"site_specific_frequency\\\": {\\\"fmax\\\": \\\"false\\\", \\\"fs\\\": \\\"\\\", \\\"ft\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}}, \\\"specifying_substitution\\\": {\\\"mwopt\\\": \\\"false\\\"}}\", \"bootstrap_parameters\": \"{\\\"nonparametric_bootstrap\\\": {\\\"b\\\": \\\"\\\", \\\"bc\\\": \\\"false\\\", \\\"bo\\\": \\\"false\\\"}, \\\"ultrafast_bootstrap\\\": {\\\"bb\\\": \\\"\\\", \\\"bcor\\\": \\\"0.99\\\", \\\"beps\\\": \\\"0.5\\\", \\\"bnni\\\": \\\"false\\\", \\\"bspec\\\": \\\"\\\", \\\"nm\\\": \\\"1000\\\", \\\"nstep\\\": \\\"100\\\", \\\"wbt\\\": \\\"false\\\", \\\"wbtl\\\": \\\"false\\\"}}\", \"miscellaneous_options\": \"{\\\"fconst\\\": \\\"\\\"}\", \"likelihood_mapping\": \"{\\\"lmap\\\": \\\"\\\", \\\"lmclust\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"wql\\\": \\\"false\\\"}\", \"tree_parameters\": \"{\\\"computing_robinson_foulds\\\": {\\\"rf\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"rf_adj\\\": \\\"false\\\", \\\"rf_all\\\": \\\"false\\\"}, \\\"constructing_consensus\\\": {\\\"bi\\\": \\\"\\\", \\\"con\\\": \\\"false\\\", \\\"minsup\\\": \\\"0.0\\\", \\\"net\\\": \\\"false\\\", \\\"sup\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"suptag\\\": \\\"\\\"}, \\\"generating_random\\\": {\\\"r\\\": \\\"\\\", \\\"rbal\\\": \\\"false\\\", \\\"rcat\\\": \\\"false\\\", \\\"rcsg\\\": \\\"false\\\", \\\"rlen\\\": \\\"\\\", \\\"ru\\\": \\\"false\\\"}, \\\"single_branch\\\": {\\\"abayes\\\": \\\"false\\\", \\\"alrt\\\": \\\"\\\", \\\"lbp\\\": \\\"\\\"}, \\\"tree_search\\\": {\\\"allnni\\\": \\\"false\\\", \\\"djc\\\": \\\"false\\\", \\\"g\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"n\\\": \\\"\\\", \\\"nbest\\\": \\\"5\\\", \\\"ninit\\\": \\\"100\\\", \\\"nstop\\\": \\\"100\\\", \\\"ntop\\\": \\\"20\\\", \\\"pers\\\": \\\"0.5\\\", \\\"sprrad\\\": \\\"6\\\"}, \\\"tree_topology\\\": {\\\"au\\\": \\\"false\\\", \\\"z\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"zb\\\": \\\"\\\", \\\"zw\\\": \\\"false\\\"}}\"}",
+      "errors" : null,
+      "position" : {
+        "top" : 196.5,
+        "left" : 1184.5
+      },
+      "name" : "IQ-TREE",
+      "uuid" : "3bde78d0-095e-4b3d-a80c-6fafb9c36b9a",
+      "outputs" : [ {
+        "type" : "nhx",
+        "name" : "bionj"
+      }, {
+        "type" : "nhx",
+        "name" : "treefile"
+      }, {
+        "type" : "nhx",
+        "name" : "contree"
+      }, {
+        "type" : "mldist",
+        "name" : "mldist"
+      }, {
+        "type" : "nex",
+        "name" : "splits.nex"
+      }, {
+        "type" : "iqtree",
+        "name" : "iqtree"
+      } ],
+      "tool_shed_repository" : {
+        "owner" : "iuc",
+        "changeset_revision" : "973a28be3b7f",
+        "name" : "iqtree",
+        "tool_shed" : "toolshed.g2.bx.psu.edu"
+      },
+      "type" : "tool",
+      "tool_version" : "1.5.5.3",
+      "annotation" : "",
+      "inputs" : [ {
+        "name" : "general_options",
+        "description" : "runtime parameter for tool IQ-TREE"
+      }, {
+        "name" : "general_options",
+        "description" : "runtime parameter for tool IQ-TREE"
+      }, {
+        "name" : "general_options",
+        "description" : "runtime parameter for tool IQ-TREE"
+      }, {
+        "name" : "likelihood_mapping",
+        "description" : "runtime parameter for tool IQ-TREE"
+      } ],
+      "post_job_actions" : {
+        "HideDatasetActionbionj" : {
+          "output_name" : "bionj",
+          "action_type" : "HideDatasetAction",
+          "action_arguments" : { }
+        },
+        "RenameDatasetActioniqtree" : {
+          "output_name" : "iqtree",
+          "action_type" : "RenameDatasetAction",
+          "action_arguments" : {
+            "newname" : "tree_report.txt"
+          }
+        },
+        "RenameDatasetActiontreefile" : {
+          "output_name" : "treefile",
+          "action_type" : "RenameDatasetAction",
+          "action_arguments" : {
+            "newname" : "max_likelihood_tree.newick"
+          }
+        },
+        "RenameDatasetActionmldist" : {
+          "output_name" : "mldist",
+          "action_type" : "RenameDatasetAction",
+          "action_arguments" : {
+            "newname" : "distance_matrix.txt"
+          }
+        },
+        "HideDatasetActionsplits.nex" : {
+          "output_name" : "splits.nex",
+          "action_type" : "HideDatasetAction",
+          "action_arguments" : { }
+        },
+        "HideDatasetActioncontree" : {
+          "output_name" : "contree",
+          "action_type" : "HideDatasetAction",
+          "action_arguments" : { }
+        }
+      },
+      "content_id" : "toolshed.g2.bx.psu.edu/repos/iuc/iqtree/iqtree/1.5.5.3",
+      "tool_id" : "toolshed.g2.bx.psu.edu/repos/iuc/iqtree/iqtree/1.5.5.3"
+    }
+  },
+  "annotation" : "",
+  "a_galaxy_workflow" : "true"
+}

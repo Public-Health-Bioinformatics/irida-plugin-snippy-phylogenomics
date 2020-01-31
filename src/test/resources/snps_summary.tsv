@@ -1,0 +1,11 @@
+DateTime	2019-12-17T23:31:01
+ReadFiles	/export/galaxy-central/database/files/000/dataset_204.dat /export/galaxy-central/database/files/000/dataset_205.dat
+Reference	/export/galaxy-central/database/files/000/dataset_203.dat
+ReferenceSize	5333942
+Software	snippy 4.4.5
+Variant-COMPLEX	827
+Variant-DEL	113
+Variant-INS	181
+Variant-MNP	85
+Variant-SNP	6834
+VariantTotal	8040
