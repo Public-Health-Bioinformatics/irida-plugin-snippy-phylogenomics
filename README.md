@@ -40,7 +40,8 @@ managers within your Galaxy instance. These can be found at:
 
 **NOTE**: There is currently an unresolved issue in snippy involving a problem resolving the correct version number for samtools. This issue arises when snippy is installed from bioconda, as is normally the case when installing to galaxy. The issue can be resolved by:
 
-1. Activating the conda environment where snippy was installed (this will likely be a 'mulled' environment, since the [snippy galaxy tool wrapper](https://github.com/galaxyproject/tools-iuc/tree/master/tools/snippy) references [multiple tool dependencies](https://github.com/galaxyproject/tools-iuc/blob/22ed9cb1e65cff5239df7ad4c76eaf0e981cf279/tools/snippy/macros.xml#L3-L7).
+1. Activating the conda environment where snippy was installed (this will likely be a 'mulled' environment, since the [snippy galaxy tool wrapper](https://github.com/galaxyproject/tools-iuc/tree/master/tools/snippy) 
+references [multiple tool dependencies](https://github.com/galaxyproject/tools-iuc/blob/22ed9cb1e65cff5239df7ad4c76eaf0e981cf279/tools/snippy/macros.xml#L3-L7).
 2. Running `conda install --override-channels -c conda-forge -c bioconda -c defaults samtools=1.9` to downgrade samtools.
 
 ## Installing to IRIDA
@@ -62,6 +63,8 @@ The plugin should now show up in the **Analyses > Pipelines** section of IRIDA.
 You should be able to run a pipeline with this plugin and get analysis results. 
 
 ![plugin-results-1.png][]
+![plugin-results-2.png][]
+![plugin-results-3.png][]
 
 ## Metadata Table
 
