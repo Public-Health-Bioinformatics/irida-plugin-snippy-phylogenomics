@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iridaWorkflow>
+  <id>bd535929-cef1-4d03-9354-61e0d43945d9</id>
+  <name>snippy-phylogenomics</name>
+  <version>0.1.1</version>
+  <analysisType>SNIPPY_PHYLOGENOMICS</analysisType>
+  <inputs>
+    <sequenceReadsPaired>sequence_reads_paired</sequenceReadsPaired>
+    <reference>reference</reference>
+    <requiresSingleSample>false</requiresSingleSample>
+  </inputs>
+  <parameters>
+    <parameter name="snippy-2-adv.minfrac" defaultValue="0.9">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/snippy/snippy/4.4.5+galaxy2" parameterName="adv.minfrac"/>
+    </parameter>
+    <parameter name="snippy-2-adv.mincov" defaultValue="10">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/snippy/snippy/4.4.5+galaxy2" parameterName="adv.mincov"/>
+    </parameter>
+    <parameter name="snippy-2-adv.mapqual" defaultValue="60">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/snippy/snippy/4.4.5+galaxy2" parameterName="adv.mapqual"/>
+    </parameter>
+    <parameter name="snippy-2-adv.minqual" defaultValue="100.0">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/snippy/snippy/4.4.5+galaxy2" parameterName="adv.minqual"/>
+    </parameter>
+    <parameter name="gubbins-5-really_adv.max_window_size" defaultValue="10000">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/gubbins/gubbins/0.1.0" parameterName="really_adv.max_window_size" label="Maximum Window Size" type="integer"/>
+    </parameter>
+    <parameter name="gubbins-5-really_adv.min_snps" defaultValue="3">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/gubbins/gubbins/0.1.0" parameterName="really_adv.min_snps" label="Minimum SNPS" type="integer"/>
+    </parameter>
+    <parameter name="gubbins-5-really_adv.min_window_size" defaultValue="100">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/gubbins/gubbins/0.1.0" parameterName="really_adv.min_window_size" label="Minimum Window Size" type="integer"/>
+    </parameter>
+    <parameter name="gubbins-5-really_adv.filter_percentage" defaultValue="25">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/gubbins/gubbins/0.1.0" parameterName="really_adv.filter_percentage" label="Filter Percentage" type="integer"/>
+    </parameter>
+    <parameter name="iqtree-7-modelling_parameters.automatic_model.cond_model.m" defaultValue="GTR+G+ASC">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/iqtree/iqtree/1.5.5.3" parameterName="modelling_parameters.automatic_model.cond_model.m"/>
+    </parameter>
+    <parameter name="iqtree-8-general_options.short_alignments" defaultValue="false">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/iqtree/iqtree/1.5.5.3" parameterName="general_options.short_alignments"/>
+    </parameter>
+  </parameters>
+  <outputs>
+    <output name="core_snps_pre_filter" fileName="core_snps_pre_filter.fasta"/>
+    <output name="core_snps_pre_recomb_filter" fileName="core_snps_pre_recomb_filter.fasta"/>
+    <output name="predicted_recombinant_sites" fileName="predicted_recombinant_sites.gff"/>
+    <output name="core_snps_post_recomb_filter" fileName="core_snps_post_recomb_filter.fasta"/>
+    <output name="tree_report" fileName="tree_report.txt"/>
+    <output name="tree" fileName="max_likelihood_tree.newick"/>
+    <output name="distance_matrix" fileName="distance_matrix.txt"/>
+  </outputs>
+  <toolRepositories>
+    <repository>
+      <name>snippy</name>
+      <owner>iuc</owner>
+      <url>https://toolshed.g2.bx.psu.edu</url>
+      <revision>3fe8ef358d66</revision>
+    </repository>
+    <repository>
+      <name>gubbins</name>
+      <owner>iuc</owner>
+      <url>https://toolshed.g2.bx.psu.edu</url>
+      <revision>637ec5d5368c</revision>
+    </repository>
+    <repository>
+      <name>snp_sites</name>
+      <owner>iuc</owner>
+      <url>https://toolshed.g2.bx.psu.edu</url>
+      <revision>5804f786060d</revision>
+    </repository>
+    <repository>
+      <name>iqtree</name>
+      <owner>iuc</owner>
+      <url>https://toolshed.g2.bx.psu.edu</url>
+      <revision>f97743d52b87</revision>
+    </repository>
+  </toolRepositories>
+</iridaWorkflow>

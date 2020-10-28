@@ -6,14 +6,14 @@
 
     <groupId>org.publichealthbioinformatics</groupId>
     <artifactId>irida-plugin-snippy-phylogenomics</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
 
     <!-- Please fill out these properties with information about your particular plugin -->
     <properties>
         <!-- Information used to define properties about a plugin. Please see the PF4J docs for more details https://pf4j.org/doc/getting-started.html -->
         <plugin.id>snippy-phylogenomics</plugin.id>
         <plugin.class>org.publichealthbioinformatics.irida.plugin.snippyphylogenomics.SnippyPhylogenomicsPlugin</plugin.class>
-        <plugin.version>0.1.0</plugin.version>
+        <plugin.version>0.1.1</plugin.version>
         <plugin.provider>Dan Fornika</plugin.provider>
         <plugin.dependencies></plugin.dependencies>
         <plugin.requires.runtime>1.0.0</plugin.requires.runtime>
