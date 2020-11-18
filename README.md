@@ -36,7 +36,7 @@ managers within your Galaxy instance. These can be found at:
 | snippy                             | `4.4.5`         | `iuc`                          | 10 (2020-01-30)   | [snippy-10:3fe8ef358d66](https://toolshed.g2.bx.psu.edu/view/iuc/snippy/3fe8ef358d66)            |
 | gubbins                            | `2.2.1`         | `iuc`                          |  0 (2017-06-23)   | [gubbins-0:637ec5d5368c](https://toolshed.g2.bx.psu.edu/view/iuc/gubbins/637ec5d5368c)           |
 | snp_sites                          | `2.5.1`         | `iuc`                          |  1 (2019-11-02)   | [snp_sites-1:5804f786060d](https://toolshed.g2.bx.psu.edu/view/iuc/snp_sites/5804f786060d)       |
-| iqtree                             | `1.5.5`         | `iuc`                          |  3 (2020-01-29)   | [iqtree-3:973a28be3b7f](https://toolshed.g2.bx.psu.edu/view/iuc/iqtee/973a28be3b7f)              |
+| iqtree                             | `1.5.5.3`       | `iuc`                          |  4 (2020-04-03)   | [iqtree-4:f97743d52b87](https://toolshed.g2.bx.psu.edu/view/iuc/iqtee/f97743d52b87)              |
 
 **NOTE**: There is currently an unresolved issue in snippy involving a problem resolving the correct version number for samtools. This issue arises when snippy is installed from bioconda, as is normally the case when installing to galaxy. The issue can be resolved by:
 
@@ -56,7 +56,9 @@ Please download the provided `irida-plugin-snippy-phylogenomics-[version].jar` f
 The plugin should now show up in the **Analyses > Pipelines** section of IRIDA.
 
 ![plugin-pipeline.png][]
-![pipeline-parameters.png][]
+![pipeline-parameters-1.png][]
+![pipeline-parameters-2.png][]
+
 
 ## Analysis Results
 
@@ -145,6 +147,8 @@ The following dependencies are required in order to make use of this plugin.
 [plugin-results-3.png]: doc/images/plugin-results-3.png
 [plugin-pipeline.png]: doc/images/plugin-pipeline.png
 [plugin-metadata.png]: doc/images/plugin-metadata.png
-[pipeline-parameters.png]: doc/images/pipeline-parameters.png
+[pipeline-parameters-1.png]: doc/images/pipeline-parameters-1.png
+[pipeline-parameters-2.png]: doc/images/pipeline-parameters-2.png
+
 [example-plugin-save-results.png]: doc/images/example-plugin-save-results.png
 [galaxy-workflow-diagram.png]: doc/images/galaxy-workflow-diagram.png
