@@ -72,14 +72,14 @@ public class SnippyPhylogenomicsPlugin extends Plugin {
 		 * <strong>id</strong> entry in the <strong>irida_workflow.xml</strong> file.
 		 * 
 		 * <pre>
-		 * {@code <id>0f42df8e-0e9f-4475-ac15-6e1b3c5ee475</id>}
+		 * {@code <id>bd535929-cef1-4d03-9354-61e0d43945d9</id>}
 		 * </pre>
 		 * 
 		 * @return A {@link UUID} defining the id of this pipeline.
 		 */
 		@Override
 		public UUID getDefaultWorkflowUUID() {
-			return UUID.fromString("0f42df8e-0e9f-4475-ac15-6e1b3c5ee475");
+			return UUID.fromString("bd535929-cef1-4d03-9354-61e0d43945d9");
 		}
 
 		/*******************************************************************************
