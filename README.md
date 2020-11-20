@@ -36,6 +36,7 @@ managers within your Galaxy instance. These can be found at:
 | snippy                             | `4.4.5`         | `iuc`                          | 10 (2020-01-30)   | [snippy-10:3fe8ef358d66](https://toolshed.g2.bx.psu.edu/view/iuc/snippy/3fe8ef358d66)            |
 | gubbins                            | `2.2.1`         | `iuc`                          |  0 (2017-06-23)   | [gubbins-0:637ec5d5368c](https://toolshed.g2.bx.psu.edu/view/iuc/gubbins/637ec5d5368c)           |
 | snp_sites                          | `2.5.1`         | `iuc`                          |  1 (2019-11-02)   | [snp_sites-1:5804f786060d](https://toolshed.g2.bx.psu.edu/view/iuc/snp_sites/5804f786060d)       |
+| snp_dists                          | `0.6.3`         | `iuc`                          |  0 (2019-10-19)   | [snp_dists-0:1959cc43b414](https://toolshed.g2.bx.psu.edu/view/iuc/snp_dists/1959cc43b414)       |
 | iqtree                             | `1.5.5.3`       | `iuc`                          |  4 (2020-04-03)   | [iqtree-4:f97743d52b87](https://toolshed.g2.bx.psu.edu/view/iuc/iqtee/f97743d52b87)              |
 
 **NOTE**: There is currently an unresolved issue in snippy involving a problem resolving the correct version number for samtools. This issue arises when snippy is installed from bioconda, as is normally the case when installing to galaxy. The issue can be resolved by:
